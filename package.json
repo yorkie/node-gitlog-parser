@@ -1,0 +1,26 @@
+{
+  "name": "gitlog-parser",
+  "version": "0.0.1",
+  "description": "git log parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yorkie/node-gitlog-parser.git"
+  },
+  "keywords": [
+    "git",
+    "parser"
+  ],
+  "author": "Yorkie Neil <yorkiefixer@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yorkie/node-gitlog-parser/issues"
+  },
+  "homepage": "https://github.com/yorkie/node-gitlog-parser",
+  "dependencies": {
+    "byline": "^4.1.1"
+  }
+}
