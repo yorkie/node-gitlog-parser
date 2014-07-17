@@ -1,11 +1,7 @@
 
-var assert = require('assert');
 var Writable = require('stream').Writable;
 var util = require('util');
 var byline = require('byline');
-
-var READY = 0x00;
-var WAIT_COMMIT = 0x01;
 
 function Gitlog() {
   if (!(this instanceof Gitlog))
