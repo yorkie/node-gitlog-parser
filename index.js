@@ -21,7 +21,7 @@ Gitlog.prototype._write = function(chunk, encoding, callback) {
     if (this._current) {
       this.emit('commit', this._current);
     }
-    this._current = { hash: chunk.slice(8, 47)+'', message: '' };
+    this._current = { hash: chunk.slice(7, 47)+'', message: '' };
   } else {
     var pair = (chunk+'').split(': ');
     if (pair && pair.length >= 2) {
@@ -47,6 +47,10 @@ function isFirstLine(chunk) {
 
 exports.parse = function(src) {
   if (!src.pipe) throw new Error('first argument must be Readable');
-  return byline(src).pipe(Gitlog());
+  var gl = Gitlog();
+  gl.on('finish', function() {
+    gl.emit('commit', gl._current);
+  });
+  return byline(src).pipe(gl);
 }
 
