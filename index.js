@@ -25,12 +25,14 @@ Gitlog.prototype._write = function(chunk, encoding, callback) {
   } else {
     var pair = (chunk+'').split(': ');
     if (pair && pair.length >= 2) {
-      if (pair[0].toLowerCase() == 'author') {
+      if (pair[0].toLowerCase() === 'author') {
         var sp = pair[1].split(' <');
         this._current.author = {
           name: sp[0],
           email: sp[1].slice(0, sp[1].length-1)
         };
+      } else if (pair[0].toLowerCase() === 'date') {
+        this._current.date = new Date(pair[1].trim());
       } else {
         this._current[pair[0]] = pair[1];
       }
