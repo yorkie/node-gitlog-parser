@@ -1,5 +1,5 @@
 
-gitlog-parser
+gitlog-parser [![Build Status](https://travis-ci.org/yorkie/node-gitlog-parser.svg)](https://travis-ci.org/yorkie/node-gitlog-parser)
 ======================
 
 parse git log stream(Readable)
