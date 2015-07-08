@@ -1,6 +1,6 @@
 {
   "name": "gitlog-parser",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "git log parser",
   "main": "index.js",
   "scripts": {
